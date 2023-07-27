@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useProductContext } from "../context/context";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const { state, dispatch } = useProductContext();
+  let { products, isloading, cartState } = state;
   return (
     <div className="navbar">
       <div className="logo">
@@ -15,8 +18,10 @@ const Navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/shop">Shop</Link>
+        <Link to="/signup">SignUp</Link>
         <Link to="/cart">
           <i className="bx bxs-cart"></i>
+          {cartState.length} Cart
         </Link>
       </div>
     </div>

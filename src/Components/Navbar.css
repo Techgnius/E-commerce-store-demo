@@ -9,7 +9,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 45px;
 }
 .logo label {
   font-size: 25px;
@@ -18,7 +17,7 @@
   margin-left: 30px;
 }
 span {
-  color: rgb(247, 106, 55);
+  color: rgb(250, 84, 23);
 }
 .links {
   margin-right: 90px;
@@ -31,10 +30,11 @@ span {
   gap: 1rem;
   padding-left: 17px;
   font-size: 20px;
+  transition: 0.3s ease;
 }
-.links a:hover {
-  color: rgb(51, 93, 218);
-  background-color: rgb(255, 255, 255);
+/* .links a:hover {
+  border-bottom: 2px solid rgb(250, 84, 23);
   padding: 5px 5px;
   border-radius: 4px;
-}
+  transform: scale(1.02);
+} */

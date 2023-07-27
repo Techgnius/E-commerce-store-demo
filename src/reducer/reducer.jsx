@@ -28,8 +28,26 @@ export const productReducer = (state, action) => {
     case "ADD_TO_CART":
       return {
         ...state,
-        cartState: [...state.cartState, action.payload],
+        cartState: [...state.cartState, { ...action.payload, quantity: 1 }],
       };
+    case "REMOVE_FROM_CART":
+      return {
+        ...state,
+        cartState: [
+          ...state.cartState.filter((cart) => cart.id !== action.payload.id),
+        ],
+      };
+    // case "UPDATE_ITEM_QUANTITY":
+    //   return {
+    //     ...state,
+    //     cartState: [
+    //       ...state.cartState.filter((cart) =>
+    //         cart.id === action.payload.id
+    //           ? (cart.quantity = action.payload.quantity + 1)
+    //           : cart.quantity
+    //       ),
+    //     ],
+    //   };
     default:
       return state;
   }
