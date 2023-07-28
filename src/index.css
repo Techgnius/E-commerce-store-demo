@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
   font-family: "Source Sans 3", sans-serif;
 }
 
@@ -97,7 +98,6 @@ button {
 }
 .header h1 {
   text-align: center;
-  padding: 17px 20px;
   color: rgb(250, 84, 23);
 }
 .items {
@@ -203,4 +203,53 @@ button {
   width: 470px;
   padding: 7px 10px;
   margin-right: 6px;
+}
+.about {
+  width: 100%;
+  height: 600px;
+}
+video {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.aboutUs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 0;
+  width: 470px;
+  margin: 30px 30%;
+}
+.aboutUs-header {
+  font-size: 30px;
+  color: rgb(250, 84, 23);
+  text-align: center;
+  margin-top: 50px;
+}
+.aboutUs-text {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.shop-link-btn {
+  border-radius: 5px;
+  margin-left: 180px;
+  margin-top: 15px;
+  border: none;
+  padding: 8px 12px;
+  background-color: rgb(51, 93, 218);
+  color: #fff;
+}
+.blog-topScreen {
+  background: url(./images/home-img.jpg);
+  width: 100%;
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 17px 20px;
 }

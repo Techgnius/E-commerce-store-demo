@@ -17,7 +17,7 @@ const Footer = () => {
             <p className="footer-details">
               <b>Email: </b>nedukwu@gmail.com.
             </p>
-            <div class="dev-authentication">
+            <div className="dev-authentication">
               <p className="dev">
                 Copyright &copy; 2023 by Chinedu | All Rights Reserved.
               </p>

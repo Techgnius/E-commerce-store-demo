@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useProductContext } from "../context/context";
+import { useProductContext } from "../../context/context";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
