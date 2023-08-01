@@ -2,38 +2,11 @@ import React, { useState, useEffect, useContext } from "react";
 import { useProductContext } from "../context/context";
 
 const Cart = () => {
+  const [total, setTotal] = useState(0);
   const { state, dispatch } = useProductContext();
-  let { products, cartState } = state;
-  let { increaseQuantity, setIncreaseQuantity } = useState();
+  let { products, isloading, error, cartState } = state;
+
   console.log(cartState);
-
-  const [total, setTotal] = useState();
-
-  useEffect(() => {
-    setTotal(
-      cartState.reduce(
-        (acc, curr) => acc + Number(curr.price) * curr.quantity,
-        0
-      )
-    );
-  }, []);
-
-  // let increaseItemQuantity = (itemId) => {
-  //   setIncreaseQuantity((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-  // };
-
-  // const increaseQuantity = (productId) => {
-  //   const updatedCart = cartState.map((item) => {
-  //     if (item.id === productId && item.quantity) {
-  //       const newQuantity = item.quantity + 1;
-  //       return {
-  //         ...item,
-  //         quantity: newQuantity,
-  //       };
-  //     }
-  //   });
-  //   dispatch({ type: "UPDATE_CART", payload: updatedCart });
-  // };
 
   return (
     <div className="wrapper">
@@ -62,13 +35,35 @@ const Cart = () => {
                   })
                 }
               /> */}
+              <button
+                type="button"
+                onClick={() =>
+                  dispatch({
+                    type: "UPDATE_ITEM_QUANTITY",
+                    payload: {
+                      id: item.id,
+                      quantity: item.quantity,
+                    },
+                  })
+                }
+              >
+                Add
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  dispatch({
+                    type: "REDUCE_ITEM_QUANTITY",
+                    payload: {
+                      id: item.id,
+                      quantity: item.quantity,
+                    },
+                  })
+                }
+              >
+                Reduce
+              </button>
             </div>
-            <button
-              onClick={() => increaseItemQuantity(item.id)}
-              className="increase-qty"
-            >
-              +
-            </button>
           </div>
         ))}
       </div>

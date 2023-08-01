@@ -1,32 +1,20 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Signup = (props) => {
+const Login = (props) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [name, setName] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email);
   };
+
   return (
     <>
       <div className="log-sign-scrn">
         <div className="Login-signup">
-          <h1 className="log-sign-header">Sign Up</h1>
+          <h1 className="log-sign-header">Log In</h1>
           <div className="main">
             <form onSubmit={() => handleSubmit()}>
-              <span>
-                <i className="fa-solid fa-user"></i>
-                <input
-                  type="text"
-                  value={name}
-                  placeholder="Full Name"
-                  id="name"
-                  name="name"
-                />
-              </span>
-              <br />
               <span>
                 <i className="fa-solid fa-user"></i>
                 <input
@@ -42,20 +30,20 @@ const Signup = (props) => {
                 <i className="fa-solid fa-lock"></i>
                 <input
                   type="password"
-                  placeholder="password"
+                  placeholder="Password"
                   id="password"
                   name="password"
                 />
               </span>
               <br />
               <button type="submit" value={password} className="log-sign-btn">
-                Sign Up
+                Log In
               </button>
             </form>
           </div>
-          <p>Already have an account? click the button below to login</p>
-          <button onClick={() => props.onFormswitch("Login")} type="button">
-            Log In
+          <p>Dont have an account? click the button below to signup</p>
+          <button onClick={() => props.onFormswitch("Signup")} type="button">
+            Sign Up
           </button>
         </div>
       </div>
@@ -63,4 +51,4 @@ const Signup = (props) => {
   );
 };
 
-export default Signup;
+export default Login;

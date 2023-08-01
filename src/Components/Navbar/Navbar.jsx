@@ -18,7 +18,9 @@ const Navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/shop">Shop</Link>
-        <Link to="/signup">SignUp</Link>
+        <Link to="/signup">
+          <i className="fa-solid fa-user"></i>
+        </Link>
         <Link to="/cart">
           <i className="bx bxs-cart"></i>
           {cartState.length} Cart

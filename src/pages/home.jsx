@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useProductContext } from "../context/context";
 import BlogImg1 from "../images/blog-pic1.jpg";
@@ -10,7 +10,23 @@ const Home = () => {
   const { state, dispatch } = useProductContext();
   let { products, isloading, error, cartState } = state;
   const featuredProducts = products.slice(0, 4);
-  console.log(featuredProducts);
+  const fetchData = async () => {
+    dispatch({ type: "START_FETCH" });
+    try {
+      const res = await fetch("https://fakestoreapi.com/products");
+      const data = await res.json();
+      dispatch({ type: "FETCH_SUCCESSFUL", payload: data });
+    } catch (err) {
+      dispatch({
+        type: "FETCH_ERROR",
+      });
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="home-container">
       <div className="home">
@@ -22,7 +38,7 @@ const Home = () => {
           </h4>
           <p>Save more today with Techgnius</p>
           <button type="button" className="shop-btn">
-            Shop Now
+            <Link to="/shop">Shop Now</Link>
           </button>
         </div>
       </div>

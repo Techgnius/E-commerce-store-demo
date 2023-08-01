@@ -7,10 +7,17 @@ import About from "./pages/about";
 import Blog from "./pages/blog";
 import Cart from "./pages/cart";
 import Shop from "./pages/shop";
+import Login from "./pages/login";
 import Signup from "./pages/signup";
+import DynamicRoute from "./pages/dynamicroute";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
+  const [currentForm, setCurrentForm] = useState("Login");
+
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+  };
   return (
     <div className="container">
       <Router>
@@ -20,7 +27,17 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/signup" element={<Signup />} />
+        <Route path="/DynamicRoute/:id" element={<DynamicRoute />} />
+          <Route
+            path="/signup"
+            element={
+              currentForm === "Login" ? (
+                <Login onFormswitch={toggleForm} />
+              ) : (
+                <Signup onFormswitch={toggleForm} />
+              )
+            }
+          />
           <Route path="/Cart" element={<Cart />} />
         </Routes>
         <Footer />

@@ -1,24 +1,46 @@
-<div className="about">
-  <video src="{videoBg}" autoPlay loop muted />
-  <div className="aboutUs">
-    <h1 className="aboutUs-header">About Us</h1>
-    <p className="aboutUs-text"></p>
-  </div>
-</div>
+const { state, dispatch } = useProductContext();
+let { products, isloading, error, cartState } = state;
+const [search, setSearch] = useState("");
+const [filteredData, setFilteredData] = useState(products);
+const [selectedCategory, setSelectedCategory] = useState("");
 
-<p className="aboutUs-text">
-  We are a reliable and authentic brand with speed deivery on items purchased on
-  our platform.
-  <br />
-  Our goal is to our customers satisfied by providing professional and topnotch.
-  <br />
-  We constantly give discounts on our products and loyal customers also get
-  coupons. <br />
-  We try as best as me can to keep delivery fees down to the bare minumum,
-  <br />
-  some products even get delivered for free depending on the terms and
-  conditions applicable to that product. <br />
-  Patronise us today and start a life time healthy customer relationship with
-  us!
-  <br />
-</p>
+const fetchData = async () => {
+  dispatch({ type: "START_FETCH" });
+  try {
+    const res = await fetch("https://fakestoreapi.com/products");
+    const data = await res.json();
+    dispatch({ type: "FETCH_SUCCESSFUL", payload: data });
+  } catch (err) {
+    dispatch({
+      type: "FETCH_ERROR",
+    });
+  }
+};
+
+useEffect(() => {
+  fetchData();
+}, []);
+
+const handleCategoryFilter = (category) => {
+  setSelectedCategory(category);
+  filterData(search, category);
+};
+
+const filterData = (searchTerm, category) => {
+  let filteredItems = products;
+
+  if (searchTerm) {
+    filteredItems = filteredItems.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
+  if (category) {
+    filteredItems = filteredItems.filter((item) =>
+      item.category.toLowerCase().includes(category.toLowerCase())
+    );
+  }
+  setFilteredData(filteredItems);
+};
+
+<Header search={search} onSearch={onSearch} onFilter={onFilter} />;

@@ -37,14 +37,36 @@ export const productReducer = (state, action) => {
           ...state.cartState.filter((cart) => cart.id !== action.payload.id),
         ],
       };
-    // case "UPDATE_ITEM_QUANTITY":
+    // case "INCREASE_ITEM_QUANTITY":
     //   return {
     //     ...state,
     //     cartState: [
     //       ...state.cartState.filter((cart) =>
     //         cart.id === action.payload.id
-    //           ? (cart.quantity = action.payload.quantity + 1)
+    //           ? { ...action.payload, quantity: action.payload.quantity + 1 }
     //           : cart.quantity
+    //       ),
+    //     ],
+    //   };
+    // case "REDUCE_ITEM_QUANTITY":
+    //   return {
+    //     ...state,
+    //     cartState: [
+    //       ...state.cartState.filter((cart) =>
+    //         cart.id === action.payload.id
+    //           ? { ...action.payload, quantity: action.payload.quantity - 1 }
+    //           : cart.quantity
+    //       ),
+    //     ],
+    //   };
+    // case "FILTER_PRODUCTS":
+    //   return {
+    //     ...state,
+    //     products: [
+    //       ...state.products.filter((prod) =>
+    //         prod.category === action.paylod.category
+    //           ? (prod.category = action.payload.categpry)
+    //           : prod.category
     //       ),
     //     ],
     //   };

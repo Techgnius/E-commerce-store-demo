@@ -28,7 +28,7 @@ const Blog = () => {
               Checkout what's hot and what's not...on our daily blog posts. Get
               trending gists about fashion and lifestyle that would keep you up
               to date. We encourage you to also participate here by blogging
-              about what what interests you.
+              about what interests you.
             </p>
           </div>
           <div className="blog">
