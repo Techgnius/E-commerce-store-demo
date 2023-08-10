@@ -4,78 +4,76 @@ import { useProductContext } from "../context/context";
 const Cart = () => {
   const [total, setTotal] = useState(0);
   const { state, dispatch } = useProductContext();
-  let { products, isloading, error, cartState } = state;
-
+  const { products, cartState } = state;
   console.log(cartState);
 
+  //Calculate the total price of items in the cart
+  useEffect(() => {
+    setTotal(
+      cartState.reduce(
+        (acc, curr) => acc + Number(curr.price) * curr.quantity,
+        0
+      )
+    );
+  }, [cartState]);
+
   return (
-    <div className="wrapper">
-      <div className="cart">
+    <div className="cart-wrapper">
+      <div className="cart-items">
         {cartState.map((item) => (
-          <div className="card" key={item.id}>
-            <div className="item-img">
-              <img width={200} src={item.image} alt="" />
-            </div>
-            <h2>{item.title}</h2>
+          <div className="cart-item" key={item.id}>
+            <img src={item.image} alt="item.name" width={135} />
             <p>{item.category}</p>
-            {/* <p>{item.description.slice(0, 13)}</p> */}
-            <p>Rating:{item.rating.rate}</p>
-            <p>${item.price}</p>
-            <div className="update-quatity">
-              {/* <label>Update Item Quantity:</label>
-              <input
-                placeholder="Update Item Quantity"
-                onChange={(e) =>
-                  dispatch({
-                    type: "UPDATE_ITEM_QUANTITY",
-                    payload: {
-                      id: item.id,
-                      quantity: e.target.value,
-                    },
-                  })
-                }
-              /> */}
-              <button
-                type="button"
-                onClick={() =>
-                  dispatch({
-                    type: "UPDATE_ITEM_QUANTITY",
-                    payload: {
-                      id: item.id,
-                      quantity: item.quantity,
-                    },
-                  })
-                }
-              >
-                Add
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  dispatch({
-                    type: "REDUCE_ITEM_QUANTITY",
-                    payload: {
-                      id: item.id,
-                      quantity: item.quantity,
-                    },
-                  })
-                }
-              >
-                Reduce
-              </button>
-            </div>
+            <p>Price: ${item.price}</p>
+            <p>Quantity: {item.quantity}</p>
+            <select
+              className="item-count"
+              value={item.quantity}
+              onChange={(event) => {
+                dispatch({
+                  type: "CHANGE_ITEM_QUANTITY",
+                  payload: {
+                    id: item.id,
+                    quantity: event.target.value,
+                  },
+                });
+              }}
+            >
+              {[...Array(10).keys()].map((number) => {
+                const num = number + 1;
+                return (
+                  <option value={num} key={num}>
+                    {num}
+                  </option>
+                );
+              })}
+            </select>
+            <span
+              className="item-del-btn"
+              onClick={() =>
+                dispatch({
+                  type: "REMOVE_FROM_CART",
+                  payload: item,
+                })
+              }
+            >
+              <i className="bx bxs-trash"></i>
+            </span>
           </div>
         ))}
       </div>
-      <div className="cart state">
-        <div className="body">
-          {cartState.length === 0 ? (
-            <div>Your Cart it Empty</div>
-          ) : (
-            <div>You Have {cartState.length} Item(s) In Your Cart</div>
-          )}
-          <span className="total-item">Total Amount: ${total}</span>
-        </div>
+      <div className="cart-total">
+        {cartState.length > 0 ? (
+          <div className="cart-item-quantity">
+            You Have {cartState.length} Item(s) In Your cart
+          </div>
+        ) : (
+          <div className="cart-item-quantity">Your Cart is Empty</div>
+        )}
+        <p className="item-total">Subtotal: ${total}</p>
+        <button type="button" className="clear-cart-btn">
+          Proceed To Checkout
+        </button>
       </div>
     </div>
   );

@@ -41,8 +41,14 @@ const Login = (props) => {
               </button>
             </form>
           </div>
-          <p>Dont have an account? click the button below to signup</p>
-          <button onClick={() => props.onFormswitch("Signup")} type="button">
+          <p className="propmt">
+            Don't have an <span>account</span>? click the button below to signup
+          </p>
+          <button
+            className="sign-log-btn"
+            onClick={() => props.onFormswitch("Signup")}
+            type="button"
+          >
             Sign Up
           </button>
         </div>

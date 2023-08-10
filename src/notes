@@ -44,3 +44,278 @@ const filterData = (searchTerm, category) => {
 };
 
 <Header search={search} onSearch={onSearch} onFilter={onFilter} />;
+
+import React, { useState, useEffect, useContext } from "react";
+import { useProductContext } from "../context/context";
+
+const Cart = () => {
+  const [total, setTotal] = useState(0);
+  const { state, dispatch } = useProductContext();
+  let { products, isloading, error, cartState } = state;
+
+  console.log(cartState);
+
+  return (
+    <div className="wrapper">
+      <div className="cart">
+        {cartState.map((item) => (
+          <div className="card" key={item.id}>
+            <div className="item-img">
+              <img width={200} src={item.image} alt="" />
+            </div>
+            <h2>{item.title}</h2>
+            <p>{item.category}</p>
+            {/* <p>{item.description.slice(0, 13)}</p> */}
+            <p>Rating:{item.rating.rate}</p>
+            <p>${item.price}</p>
+            <div className="update-quatity">
+              {/* <label>Update Item Quantity:</label>
+              <input
+                placeholder="Update Item Quantity"
+                onChange={(e) =>
+                  dispatch({
+                    type: "UPDATE_ITEM_QUANTITY",
+                    payload: {
+                      id: item.id,
+                      quantity: e.target.value,
+                    },
+                  })
+                }
+              /> */}
+              <button
+                type="button"
+                onClick={() =>
+                  dispatch({
+                    type: "UPDATE_ITEM_QUANTITY",
+                    payload: {
+                      id: item.id,
+                      quantity: item.quantity,
+                    },
+                  })
+                }
+              >
+                Add
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  dispatch({
+                    type: "REDUCE_ITEM_QUANTITY",
+                    payload: {
+                      id: item.id,
+                      quantity: item.quantity,
+                    },
+                  })
+                }
+              >
+                Reduce
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="cart state">
+        <div className="body">
+          {cartState.length === 0 ? (
+            <div>Your Cart it Empty</div>
+          ) : (
+            <div>You Have {cartState.length} Item(s) In Your Cart</div>
+          )}
+          <span className="total-item">Total Amount: ${total}</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+<label>Ascending</label>
+              <input
+                type="radio"
+                label="Ascending"
+                onChange={() =>
+                  filterdispatch({
+                    type: "SORT_BY_PRICE",
+                    payload: "lowToHigh",
+                  })
+                }
+                checked={sort === "lowToHigh" ? true : false}
+              />
+              <br />
+              <label>Descending</label>
+              <input
+                type="radio"
+                label="Descending"
+                onChange={() => {
+                  filterdispatch({
+                    type: "SORT_BY_PRICE",
+                    payload: "highToLow",
+                  });
+                }}
+                checked={sort === "highToLow" ? true : false}
+              />
+              <br />
+              <label>Men</label>
+              <input
+                type="checkbox"
+                onChange={() =>
+                  filterdispatch({
+                    type: "FILTER_BY_MENS'S CLOTHING",
+                    payloady: "men's clothing",
+                  })
+                }
+                checked={byMenCloths === "men's clothing" ? true : false}
+              />
+              <br />
+              <label>Women</label>
+              <input
+                type="checkbox"
+                onChange={() => {
+                  filterdispatch({
+                    type: "FILTER_BY_WOMEN'S",
+                  });
+                }}
+                checked={byWomenCloths}
+              />
+              <br />
+              <label>Jewelry</label>
+              <input
+                type="checkbox"
+                onChange={() => {
+                  filterdispatch({
+                    type: "FILTER_BY_JEWELRY",
+                  });
+                }}
+                checked={byJewelry}
+              />
+              <br />
+              <label>Electronics</label>
+              <input
+                type="checkbox"
+                onChange={() => {
+                  filterdispatch({
+                    type: "FILTER_BY_ELECTRONICS",
+                  });
+                }}
+                checked={byElectronics}
+              />
+              <br />
+              <button
+                type="button"
+                className="clear-filtr-btn"
+                onClick={() => {
+                  filterdispatch({ type: "CLEAR_FILTER" });
+                }}
+              >
+                Clear Filter
+              </button>
+
+export default Cart;
+
+/* media query */
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 991px) {
+  .header {
+    padding: 3rem;
+  }
+  section {
+    padding: 10rem 3% 2rem;
+  }
+  .skills {
+    padding-bottom: 7rem;
+  }
+  .portfolio {
+    padding-bottom: 7rem;
+  }
+  .contact {
+    min-height: auto;
+  }
+  .footer {
+    padding: 2rem 2%;
+  }
+}
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background: var(--bg-color);
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  .navbar.active {
+    display: block;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+  }
+
+  .home {
+    flex-direction: column;
+  }
+  .home-content h3 {
+    font-size: 2.6rem;
+  }
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  .home-img img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .about {
+    flex-direction: column-reverse;
+  }
+  .about img {
+    width: 70vw;
+    margin-top: 4rem;
+  }
+  .skills h2 {
+    margin-bottom: 3rem;
+  }
+  .portfolio h2 {
+    margin-bottom: 3rem;
+  }
+  .portfolio-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 617px) {
+  .portfolio-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .contact form .input-box input {
+    width: 100%;
+  }
+}
+@media (max-width: 365px) {
+  .home-img img {
+    width: 90vw;
+  }
+  .about-img img {
+    width: 90vw;
+  }
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .footer p {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+

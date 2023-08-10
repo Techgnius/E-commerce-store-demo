@@ -1,20 +1,30 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useProductContext } from "../context/context";
-import { Link } from "react-router-dom";
 
 const Shop = () => {
-  const { state, dispatch } = useProductContext();
+  const { state, dispatch, filterstate, filterdispatch } = useProductContext();
   let { products, isloading, error, cartState } = state;
-  const [filterproduct, setFilterproduct] = useState("");
+  const { sort, searchQuery } = filterstate;
 
-  // const filteredProducts = (productCategory) => {
-  //   const filteredResult = products.map((product) => {
-  //     if (product.category === productCategory) {
-  //       setFilterproduct(filteredResult);
-  //     }
-  //     return filteredProducts;
-  //   });
-  // };
+  const transformProducts = () => {
+    let sortedProduts = products;
+    if (sort) {
+      sortedProduts = sortedProduts.sort((a, b) =>
+        sort === "lowToHigh" ? a.price - b.price : b.price - a.price
+      );
+    }
+    if (searchQuery) {
+      sortedProduts = sortedProduts.filter((prod) =>
+        prod.category.toLowerCase().includes(searchQuery)
+      );
+    }
+
+    let handleToast = () => {
+      toastRef.current.displayToast();
+    };
+
+    return sortedProduts;
+  };
 
   const fetchData = async () => {
     dispatch({ type: "START_FETCH" });
@@ -33,28 +43,6 @@ const Shop = () => {
     fetchData();
   }, []);
 
-  // const handleCategoryFilter = (category) => {
-  //   setSelectedCategory(category);
-  //   filterData(search, category);
-  // };
-
-  // const filterData = (searchTerm, category) => {
-  //   let filteredItems = products;
-
-  //   if (searchTerm) {
-  //     filteredItems = filteredItems.filter((item) =>
-  //       item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  //     );
-  //   }
-
-  //   if (category) {
-  //     filteredItems = filteredItems.filter((item) =>
-  //       item.category.toLowerCase().includes(category.toLowerCase())
-  //     );
-  //   }
-  //   setFilteredData(filteredItems);
-  // };
-
   return (
     <>
       <div className="shop">
@@ -65,38 +53,66 @@ const Shop = () => {
           <p>Make Your Order Now We Will Deliver...</p>
         </div>
         <div className="shop-body">
-          {/* <div className="filter-section">
+          <div className="filter-section">
             <h1 className="filter-header">Filter Products</h1>
-            <div className="filter-prod">
+            <form>
+              <input
+                type="radio"
+                value="ascending"
+                className="filter-check"
+                onChange={() =>
+                  filterdispatch({
+                    type: "SORT_BY_PRICE",
+                    payload: "lowToHigh",
+                  })
+                }
+                checked={sort === "lowToHigh" ? true : false}
+              />
+              <label>Ascending</label>
+              <br />
+              <input
+                type="radio"
+                value="descending"
+                className="filter-check"
+                onChange={() => {
+                  filterdispatch({
+                    type: "SORT_BY_PRICE",
+                    payload: "highToLow",
+                  });
+                }}
+                checked={sort === "highToLow" ? true : false}
+              />
+              <label>Descending</label>
+              <br />
               <button
+                type="button"
+                className="filter-btn"
                 onClick={() =>
-                  dispatch({
-                    type: "FILTER_PRODUCTS",
-                    payload: {
-                      id: products.id,
-                      category: products.category,
-                    },
+                  filterdispatch({
+                    type: "CLEAR_FILTER",
                   })
                 }
               >
-                Men's Clothing
+                Clear Filter
               </button>
-            </div>
-          </div> */}
+            </form>
+          </div>
           <div className="shop-content">
-            <div className="filter-prod">
-              <h1>Filter Products</h1>
-              <div className="categories">
-                {/* <button
-                  onClick={() =>
-                    dispatch({
-                      type: "FILTER_PRODUCTS",
-                      payload: products,
-                    })
-                  }
-                >
-                  Men
-                </button> */}
+            <div className="shop-content-top">
+              <div className="search-input">
+                <form>
+                  <input
+                    type="text"
+                    className="search-prod"
+                    placeholder="Search Product Category..."
+                    onChange={(event) =>
+                      filterdispatch({
+                        type: "FILTER_BY_SEARCH",
+                        payload: event.target.value,
+                      })
+                    }
+                  />
+                </form>
               </div>
             </div>
             {error && <div>Something went wrong</div>}
@@ -105,8 +121,7 @@ const Shop = () => {
                 <div>Loading...</div>
               ) : (
                 products.length &&
-                products.map((product) => (
-                  // <Link to={`/dynamicroute/${product.id}`}>
+                transformProducts().map((product) => (
                   <div className="product" key={product.id}>
                     <div className="item-card">
                       <img width={200} src={product.image} alt={product.name} />
@@ -142,7 +157,6 @@ const Shop = () => {
                       )}
                     </div>
                   </div>
-                  // </Link>
                 ))
               )}
             </div>

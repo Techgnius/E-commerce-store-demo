@@ -49,19 +49,15 @@ const Footer = () => {
               <li>Coupons</li>
             </ul>
           </div>
-          <div className="install-app">
-            <h3 className="dwld-details-header">Install App</h3>
-            <p className="app-download-details">
-              Available on google play Services and App Store
-            </p>
-            <p className="google-play">
-              <i className="bx bxl-play-store"></i>
-              <b>Google Play</b>
-            </p>
-            <p className="app-store">
-              <i className="bx bxl-apple"></i>
-              <b>App Store</b>
-            </p>
+          <div className="get-paid">
+            <h3 className="footer-p-header">Get Paid</h3>
+            <ul>
+              <li>Sell on Techgnius</li>
+              <li>Become a Sales Consultant</li>
+              <li>Become a Logistics Service Partner</li>
+              <li>Refer a Customer</li>
+              <li>Buy One Get One Free</li>
+            </ul>
           </div>
         </div>
       </div>

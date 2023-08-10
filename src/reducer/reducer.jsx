@@ -1,8 +1,13 @@
 export const initial_state = {
   products: [],
   cartState: [],
+  productDetails: [],
   isLoading: false,
   error: false,
+};
+
+export const initial_filterstate = {
+  searchQuery: "",
 };
 
 export const productReducer = (state, action) => {
@@ -24,6 +29,7 @@ export const productReducer = (state, action) => {
         isLoading: false,
         error: true,
         products: [],
+        productDetails: [],
       };
     case "ADD_TO_CART":
       return {
@@ -37,39 +43,41 @@ export const productReducer = (state, action) => {
           ...state.cartState.filter((cart) => cart.id !== action.payload.id),
         ],
       };
-    // case "INCREASE_ITEM_QUANTITY":
-    //   return {
-    //     ...state,
-    //     cartState: [
-    //       ...state.cartState.filter((cart) =>
-    //         cart.id === action.payload.id
-    //           ? { ...action.payload, quantity: action.payload.quantity + 1 }
-    //           : cart.quantity
-    //       ),
-    //     ],
-    //   };
-    // case "REDUCE_ITEM_QUANTITY":
-    //   return {
-    //     ...state,
-    //     cartState: [
-    //       ...state.cartState.filter((cart) =>
-    //         cart.id === action.payload.id
-    //           ? { ...action.payload, quantity: action.payload.quantity - 1 }
-    //           : cart.quantity
-    //       ),
-    //     ],
-    //   };
-    // case "FILTER_PRODUCTS":
-    //   return {
-    //     ...state,
-    //     products: [
-    //       ...state.products.filter((prod) =>
-    //         prod.category === action.paylod.category
-    //           ? (prod.category = action.payload.categpry)
-    //           : prod.category
-    //       ),
-    //     ],
-    //   };
+    case "CHANGE_ITEM_QUANTITY":
+      return {
+        ...state,
+        cartState: state.cartState.filter((cart) =>
+          cart.id === action.payload.id
+            ? (cart.quantity = action.payload.quantity)
+            : cart.quantity
+        ),
+      };
+    case "OPEN_PRODUCT_DETAILS":
+      return {
+        ...state,
+        productDetails: [
+          ...state.productDetails.filter(
+            (prod) => prod.id === action.payload.id
+          ),
+        ],
+      };
+
+    default:
+      return state;
+  }
+};
+
+export const filterReducer = (state, action) => {
+  switch (action.type) {
+    case "SORT_BY_PRICE":
+      return { ...state, sort: action.payload };
+    case "FILTER_BY_SEARCH":
+      return { ...state, searchQuery: action.payload };
+    case "CLEAR_FILTER":
+      return {
+        searchQuery: "",
+      };
+
     default:
       return state;
   }

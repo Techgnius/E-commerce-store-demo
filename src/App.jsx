@@ -5,11 +5,10 @@ import Home from "./pages/home";
 import Navbar from "./Components/Navbar/Navbar";
 import About from "./pages/about";
 import Blog from "./pages/blog";
-import Cart from "./pages/cart";
+import Cart from "./pages/Cart";
 import Shop from "./pages/shop";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
-import DynamicRoute from "./pages/dynamicroute";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />
-        <Route path="/DynamicRoute/:id" element={<DynamicRoute />} />
           <Route
             path="/signup"
             element={

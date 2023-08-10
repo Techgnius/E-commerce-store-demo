@@ -1,13 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import videoBg from "../videos/backgroundVideo.mp4";
 
 const About = () => {
   return (
     <>
       <div className="about">
+        <div className="overlay"></div>
         <video src={videoBg} autoPlay loop muted />
         <div className="aboutUs">
-          <h1 className="aboutUs-header">About Us</h1>
+          <h1 className="aboutUs-header">
+            About <span>Us</span>
+          </h1>
           <p className="aboutUs-text">
             We are a reliable and authentic brand with speedy delivery on
             products purchased from our platform. Our goal is to ensure that our
@@ -22,7 +26,7 @@ const About = () => {
           </p>
           <div className="go-to-shop-btn">
             <button className="shop-link-btn" type="button">
-              Start Shopping
+              <Link to="/shop">Start Shopping</Link>
             </button>
           </div>
         </div>

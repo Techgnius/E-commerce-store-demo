@@ -10,7 +10,9 @@ const Blog = () => {
     <>
       <div className="blog-con">
         <div className="blog-topScreen">
-          <h1>Welcome To Our Blog Page</h1>
+          <h1>
+            Welcome To Our <span>Blog Page</span>
+          </h1>
           <p>
             <b>
               Stay up to date with our daily news about
@@ -20,7 +22,9 @@ const Blog = () => {
         </div>
         <div className="blog-body">
           <div className="header">
-            <h1>Creative Blog</h1>
+            <h1>
+              Creative <span>Blog</span>
+            </h1>
           </div>
           <div className="blog-trendy-card">
             <img src={TrendyImg} width={320} alt="" />
@@ -33,7 +37,9 @@ const Blog = () => {
           </div>
           <div className="blog">
             <div className="header">
-              <h1>What's Trending...</h1>
+              <h1>
+                What's <span>Trending</span>...
+              </h1>
             </div>
             <div className="blog-card-container">
               <div className="blog-card">
@@ -44,7 +50,7 @@ const Blog = () => {
                   blanditiis autem doloribus eveniet quia esse.
                 </p>
                 <button type="button" className="blog-btn">
-                  Learn More
+                  Read More
                 </button>
               </div>
               <div className="blog-card">
@@ -55,7 +61,7 @@ const Blog = () => {
                   blanditiis autem doloribus eveniet quia esse.
                 </p>
                 <button type="button" className="blog-btn">
-                  Learn More
+                  Read More
                 </button>
               </div>
               <div className="blog-card">
@@ -66,7 +72,7 @@ const Blog = () => {
                   blanditiis autem doloribus eveniet quia esse.
                 </p>
                 <button type="button" className="blog-btn">
-                  Learn More
+                  Read More
                 </button>
               </div>
               <div className="blog-card">
@@ -77,7 +83,7 @@ const Blog = () => {
                   blanditiis autem doloribus eveniet quia esse.
                 </p>
                 <button type="button" className="blog-btn">
-                  Learn More
+                  Read More
                 </button>
               </div>
             </div>

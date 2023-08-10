@@ -1,15 +1,17 @@
-import React, { useContext,useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useProductContext } from "../context/context";
 import BlogImg1 from "../images/blog-pic1.jpg";
 import BlogImg2 from "../images/blog-pic2.jpg";
 import BlogImg3 from "../images/blog-pic3.jpg";
 import BlogImg4 from "../images/blog-pic4.jpg";
+import ScrollReveal from "scrollreveal";
 
 const Home = () => {
   const { state, dispatch } = useProductContext();
   let { products, isloading, error, cartState } = state;
   const featuredProducts = products.slice(0, 4);
+
   const fetchData = async () => {
     dispatch({ type: "START_FETCH" });
     try {
@@ -28,10 +30,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="homeContainer">
       <div className="home">
         <div className="home-screen">
-          <h1>Quality And Affordable Products</h1>
+          <h1>
+            Quality And <span>Affordable Products</span>
+          </h1>
           <h4>
             Guaranteed to leave a big smile
             <br /> on your face
@@ -44,14 +48,15 @@ const Home = () => {
       </div>
       <div className="featured-prod">
         <div className="header">
-          <h1>Featured Products</h1>
+          <h1>
+            Featured <span>Products</span>
+          </h1>
         </div>
         <div className="items">
           {featuredProducts.map((featured) => (
             <div className="featured-item" key={featured.id}>
               <div className="item-card">
                 <img width={150} src={featured.image} alt="" />
-                {/* <p>{featured.title}</p> */}
                 <p>{featured.category}</p>
                 <p>Rating:{featured.rating.rate}</p>
                 <p>${featured.price}</p>
@@ -87,12 +92,14 @@ const Home = () => {
           <span>50%</span> Off on All Products And Accessories
         </p>
         <button type="button" className="sales-btn">
-          Explore Now
+          <Link to="/shop">Explore Now</Link>
         </button>
       </div>
       <div className="blog">
         <div className="header">
-          <h1>Our Customers Feedbacks</h1>
+          <h1>
+            Our Customers <span>Feedbacks</span>
+          </h1>
           <p>We love it when our customers give us feedbacks...</p>
         </div>
         <div className="blog-card-container">
@@ -104,7 +111,7 @@ const Home = () => {
               doloribus eveniet quia esse.
             </p>
             <button type="button" className="blog-btn">
-              Learn More
+              Read More
             </button>
           </div>
           <div className="blog-card">
@@ -115,7 +122,7 @@ const Home = () => {
               doloribus eveniet quia esse.
             </p>
             <button type="button" className="blog-btn">
-              Learn More
+              Read More
             </button>
           </div>
           <div className="blog-card">
@@ -126,7 +133,7 @@ const Home = () => {
               doloribus eveniet quia esse.
             </p>
             <button type="button" className="blog-btn">
-              Learn More
+              Read More
             </button>
           </div>
           <div className="blog-card">
@@ -137,7 +144,7 @@ const Home = () => {
               doloribus eveniet quia esse.
             </p>
             <button type="button" className="blog-btn">
-              Learn More
+              Read More
             </button>
           </div>
         </div>

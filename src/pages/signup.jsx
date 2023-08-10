@@ -20,7 +20,7 @@ const Signup = (props) => {
                 <i className="fa-solid fa-user"></i>
                 <input
                   type="text"
-                  value={name}
+                  // value={name}
                   placeholder="Full Name"
                   id="name"
                   name="name"
@@ -31,7 +31,7 @@ const Signup = (props) => {
                 <i className="fa-solid fa-user"></i>
                 <input
                   type="email"
-                  value={email}
+                  // value={email}
                   placeholder="Email"
                   id="email"
                   name="email"
@@ -53,8 +53,15 @@ const Signup = (props) => {
               </button>
             </form>
           </div>
-          <p>Already have an account? click the button below to login</p>
-          <button onClick={() => props.onFormswitch("Login")} type="button">
+          <p className="propmt">
+            Already have an <span>account</span>? click the button below to
+            login
+          </p>
+          <button
+            className="sign-log-btn"
+            onClick={() => props.onFormswitch("Login")}
+            type="button"
+          >
             Log In
           </button>
         </div>

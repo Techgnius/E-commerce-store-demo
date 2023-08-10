@@ -10,37 +10,19 @@
   display: grid;
   grid-template-columns: repeat(4, 250px);
   gap: 50px;
-  /* grid-auto-rows: 200px; */
   justify-content: center;
 }
-
-button {
-  border: none;
-  padding: 8px 12px;
-  background-color: rgb(51, 93, 218);
-  color: #fff;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.item {
-  display: grid;
-  grid-template-columns: repeat(4, 250px);
-  gap: 50px;
-  /* grid-auto-rows: 200px; */
-  justify-content: center;
-}
-
 .item-btn {
   width: 100%;
   border: none;
-  padding: 8px 12px;
+  padding: 6px;
   background-color: rgb(51, 93, 218);
   color: #fff;
   cursor: pointer;
+  border-radius: 5px;
+}
+span {
+  color: rgb(51, 93, 218);
 }
 .wrapper {
   display: grid;
@@ -71,7 +53,6 @@ button {
 }
 .home-screen h1 {
   font-size: 35px;
-  color: rgb(250, 84, 23);
   margin-top: 40px;
 }
 .home-screen h4 {
@@ -88,8 +69,14 @@ button {
   padding: 12px 14px;
   margin-top: 15px;
   border-radius: 5px;
-  box-shadow: 0 0 1rem rgb(51, 93, 218);
+  border: none;
+  background-color: rgb(51, 93, 218);
   cursor: pointer;
+}
+.shop-btn a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
 }
 .featured-prod {
   width: 100%;
@@ -98,7 +85,6 @@ button {
 }
 .header h1 {
   text-align: center;
-  color: rgb(250, 84, 23);
 }
 .items {
   display: flex;
@@ -149,14 +135,20 @@ button {
   padding: 12px 14px;
   margin-top: 15px;
   border-radius: 5px;
-
   cursor: pointer;
   margin-left: 45%;
   margin-bottom: 12px;
+  border: none;
+  background-color: rgb(51, 93, 218);
+}
+.sales-btn a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
 }
 .blog {
   width: 100%;
-  height: 600px;
+  height: 500px;
   padding: 17px 20px;
 }
 .header p {
@@ -174,9 +166,18 @@ button {
   height: 200px;
   justify-content: space-around;
 }
+.blog-btn {
+  padding: 12px 14px;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  border: none;
+  color: #fff;
+  background-color: rgb(51, 93, 218);
+}
 .newsletter {
   width: 100%;
   height: 110px;
+  margin-top: 20px;
   padding: 17px 20px;
   background-color: rgb(233, 187, 170);
 }
@@ -196,6 +197,13 @@ button {
   color: rgb(207, 62, 10);
   font-weight: bold;
 }
+.news-l-btn {
+  padding: 9px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: rgb(51, 93, 218);
+}
 .newsletter-form {
   justify-content: space-around;
 }
@@ -206,7 +214,15 @@ button {
 }
 .about {
   width: 100%;
-  height: 600px;
+  height: 640px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 video {
   width: 100%;
@@ -221,12 +237,13 @@ video {
   padding: 0;
   width: 470px;
   margin: 30px 30%;
+  margin-bottom: 60px;
 }
 .aboutUs-header {
   font-size: 30px;
-  color: rgb(250, 84, 23);
   text-align: center;
   margin-top: 50px;
+  color: #fff;
 }
 .aboutUs-text {
   font-size: 20px;
@@ -234,6 +251,7 @@ video {
   margin-top: 20px;
   font-weight: bold;
   letter-spacing: 1px;
+  color: #fff;
 }
 .shop-link-btn {
   border-radius: 5px;
@@ -242,7 +260,11 @@ video {
   border: none;
   padding: 8px 12px;
   background-color: rgb(51, 93, 218);
+}
+.shop-link-btn a {
   color: #fff;
+  font-weight: bold;
+  text-decoration: none;
 }
 .blog-body {
   width: 100%;
@@ -256,13 +278,14 @@ video {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 17px 20px;
+  padding: 20px;
+  padding-top: 60px;
 }
 .blog-topScreen h1 {
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: rgb(250, 84, 23);
+  color: #fff;
 }
 .blog-topScreen p {
   text-align: center;
@@ -272,6 +295,7 @@ video {
   width: 640px;
   display: flex;
   margin-top: 30px;
+  margin-left: 50px;
 }
 .blog-trendy-card p {
   margin-left: 60px;
@@ -284,7 +308,8 @@ video {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 17px 20px;
+  padding: 20px;
+  padding-top: 53px;
 }
 .shop-topscreen h1 {
   font-size: 34px;
@@ -296,34 +321,78 @@ video {
   text-align: center;
   color: #fff;
 }
+.shop-topscreen span {
+  color: rgb(250, 84, 23);
+}
 .shop-body {
   width: 100%;
-}
-.filter-section {
-  width: 100%;
-  height: 150px;
-  /* background-color: rgb(51, 93, 218); */
-}
-.filter-header {
-  font-size: 30px;
-  text-align: center;
-  /* color: #fff; */
-  color: rgb(0, 0, 0);
+  display: flex;
 }
 .shop-content {
   width: 100%;
   height: 100%;
-  margin-top: 60px;
+  margin-top: 30px;
+}
+.shop-content-top {
+  width: 100%;
+  height: 80px;
+  background-color: rgb(197, 191, 191);
+  margin-bottom: 20px;
+}
+.search-prod {
+  width: 30%;
+  padding: 9px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 16px;
+  float: right;
+}
+.search-prod::placeholder {
+  font-size: 17px;
+}
+.filter-section {
+  width: 20%;
+  height: 350px;
+  background-color: rgb(51, 93, 218);
+  display: flex;
+  flex-direction: column;
+  padding: 9px 11px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.filter-header {
+  font-size: 21px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.filter-section label {
+  color: #fff;
+}
+.filter-btn {
+  width: 100%;
+  padding: 7px 9px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.filter-check {
+  margin-bottom: 17px;
 }
 .log-sign-scrn {
   width: 100%;
   height: 600px;
-  background-color: rgb(126, 139, 135);
+  background-image: url(./images/sign-log-img.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
   padding: 17px 20px;
 }
 .Login-signup {
   width: 320px;
   margin: auto;
+  margin-top: 80px;
   border-radius: 20px;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 17px 20px;
@@ -333,6 +402,23 @@ video {
   text-align: center;
   font-size: 30px;
   margin-bottom: 25px;
+}
+.sign-log-btn {
+  width: 90%;
+  height: 30px;
+  padding-left: 0;
+  border-radius: 6px;
+  border: none;
+  color: rgb(255, 255, 255);
+  background-color: rgb(250, 84, 23);
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.sign-log-btn:hover {
+  box-shadow: 2px 2px 6px #555;
+  background-color: rgb(190, 110, 81);
+  cursor: pointer;
 }
 .main {
   display: flex;
@@ -348,6 +434,7 @@ video {
   color: #333;
   margin-bottom: 30px;
   border-radius: 6px;
+  padding-left: 35px;
 }
 .main input::placeholder {
   padding-left: 26px;
@@ -361,10 +448,19 @@ video {
 }
 .main i {
   position: absolute;
-  left: 9px;
+  left: 15px;
   color: rgb(0, 0, 0);
   font-size: 14px;
   top: 2px;
+}
+.propmt {
+  font-size: 18px;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+.propmt span {
+  font-weight: bold;
+  color: rgb(250, 84, 23);
 }
 .log-sign-btn {
   width: 90%;
@@ -381,4 +477,112 @@ video {
 .log-sign-btn:hover {
   box-shadow: 2px 2px 6px #555;
   background-color: #7799d4;
+  cursor: pointer;
+}
+.cart-wrapper {
+  display: flex;
+  padding: 15px 16px;
+}
+.cart-items {
+  width: 80%;
+  height: 100%;
+  padding: 17px 20px;
+  margin-top: 110px;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+.cart-item p {
+  font-size: 20px;
+}
+.item-count {
+  width: 50px;
+  height: 29px;
+}
+.cart-item-quantity {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+.cart-total {
+  width: 20%;
+  background-color: rgb(51, 93, 218);
+  margin-top: 50px;
+}
+.item-total {
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+.clear-cart-btn {
+  width: 120px;
+  padding: 8px 10px;
+  margin-left: 70px;
+  margin-top: 30px;
+  border-radius: 5px;
+  border: none;
+}
+/* @media (max-width) {
+  .
+} */
+@media (max-width: 768px) {
+  .items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: 80px;
+  }
+  .summer-sales {
+    margin-top: 300px;
+  }
+  .blog {
+    height: 650px;
+  }
+  .header p {
+    text-align: center;
+    font-size: 13px;
+  }
+  .blog-card {
+    width: 300px;
+    padding: 7px 9px;
+    height: 140px;
+    justify-content: space-around;
+  }
+
+  .blog-card-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    row-gap: 215px;
+    margin-left: 40px;
+  }
+  .blog-card {
+    margin-top: 30px;
+  }
+  .newsletter {
+    margin-top: 300px;
+    height: 130px;
+  }
+  .newsletter-con {
+    display: flex;
+    flex-direction: column;
+  }
+  .about {
+    height: 650px;
+  }
+  .aboutUs {
+    width: 70%;
+  }
+  .aboutUs-header {
+    font-size: 25px;
+    margin-right: 170px;
+  }
+  .aboutUs-text {
+    font-size: 17px;
+    margin-right: 120px;
+  }
+  .shop-link-btn {
+    padding: 8px;
+  }
 }

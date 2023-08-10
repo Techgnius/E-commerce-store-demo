@@ -1,32 +1,47 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { useProductContext } from "../../context/context";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
   const { state, dispatch } = useProductContext();
-  let { products, isloading, cartState } = state;
+  let { cartState } = state;
+  const navRef = useRef();
+  const showNavRef = () => {
+    navRef.current.classList.toggle("responsive-nav");
+  };
   return (
-    <div className="navbar">
+    <header>
       <div className="logo">
         <label>
-          Tech<span>Gnius</span>
+          <Link to="/">
+            Tech<span>Gnius</span>
+          </Link>
         </label>
       </div>
-      <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/shop">Shop</Link>
-        <Link to="/signup">
-          <i className="fa-solid fa-user"></i>
-        </Link>
-        <Link to="/cart">
-          <i className="bx bxs-cart"></i>
-          {cartState.length} Cart
-        </Link>
+      <div className="navbar">
+        <nav ref={navRef}>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/shop">Shop</Link>
+          <Link to="/signup">
+            <i className="fa-solid fa-user"></i>
+          </Link>
+          <Link to="/cart">
+            <i className="bx bxs-cart cart-q">
+              <span className="cartstate-length">{cartState.length}</span>
+            </i>
+          </Link>
+          <span onClick={showNavRef}>
+            <i className="fa-solid fa-x menu-bar close-bar"></i>
+          </span>
+        </nav>
+        <span onClick={showNavRef}>
+          <i className="fa-solid fa-bars menu-bar"></i>
+        </span>
       </div>
-    </div>
+    </header>
   );
 };
 
