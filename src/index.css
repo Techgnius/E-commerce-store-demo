@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-family: "Noto Sans", sans-serif;
   font-family: "Source Sans 3", sans-serif;
 }
@@ -222,7 +223,7 @@ span {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 video {
   width: 100%;
@@ -249,7 +250,6 @@ video {
   font-size: 20px;
   text-align: center;
   margin-top: 20px;
-  font-weight: bold;
   letter-spacing: 1px;
   color: #fff;
 }
@@ -339,15 +339,27 @@ video {
   background-color: rgb(197, 191, 191);
   margin-bottom: 20px;
 }
+.search-input span {
+  position: relative;
+}
+.search-input i {
+  position: absolute;
+  left: 810px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  top: 24px;
+}
 .search-prod {
   width: 30%;
   padding: 9px;
+  padding-left: 25px;
   border-radius: 5px;
   border: none;
   margin-top: 16px;
   float: right;
 }
 .search-prod::placeholder {
+  color: rgb(0, 0, 0);
   font-size: 17px;
 }
 .filter-section {
@@ -516,11 +528,13 @@ video {
   font-size: 20px;
   color: #fff;
 }
-.clear-cart-btn {
+.checkout-btn {
   width: 120px;
   padding: 8px 10px;
   margin-left: 70px;
   margin-top: 30px;
+  margin-bottom: 30px;
+
   border-radius: 5px;
   border: none;
 }

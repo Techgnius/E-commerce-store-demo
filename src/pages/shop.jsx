@@ -101,17 +101,20 @@ const Shop = () => {
             <div className="shop-content-top">
               <div className="search-input">
                 <form>
-                  <input
-                    type="text"
-                    className="search-prod"
-                    placeholder="Search Product Category..."
-                    onChange={(event) =>
-                      filterdispatch({
-                        type: "FILTER_BY_SEARCH",
-                        payload: event.target.value,
-                      })
-                    }
-                  />
+                  <span>
+                    <i class="bx bx-search"></i>
+                    <input
+                      type="text"
+                      className="search-prod"
+                      placeholder="Search Product Category..."
+                      onChange={(event) =>
+                        filterdispatch({
+                          type: "FILTER_BY_SEARCH",
+                          payload: event.target.value,
+                        })
+                      }
+                    />
+                  </span>
                 </form>
               </div>
             </div>

@@ -71,8 +71,8 @@ const Cart = () => {
           <div className="cart-item-quantity">Your Cart is Empty</div>
         )}
         <p className="item-total">Subtotal: ${total}</p>
-        <button type="button" className="clear-cart-btn">
-          Proceed To Checkout
+        <button type="button" className="checkout-btn">
+          Checkout
         </button>
       </div>
     </div>

@@ -31,7 +31,7 @@ const Blog = () => {
             <p>
               Checkout what's hot and what's not...on our daily blog posts. Get
               trending gists about fashion and lifestyle that would keep you up
-              to date. We encourage you to also participate here by blogging
+              to date. We also encourage you to participate here by blogging
               about what interests you.
             </p>
           </div>
