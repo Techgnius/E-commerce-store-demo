@@ -6,7 +6,6 @@ const About = () => {
   return (
     <>
       <div className="about">
-        <div className="overlay"></div>
         <video src={videoBg} autoPlay loop muted />
         <div className="aboutUs">
           <h1 className="aboutUs-header">
