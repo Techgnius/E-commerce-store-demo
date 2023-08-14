@@ -40,7 +40,6 @@ const Home = () => {
             Guaranteed to leave a big smile
             <br /> on your face
           </h4>
-          <p>Save more today with Techgnius</p>
           <button type="button" className="shop-btn">
             <Link to="/shop">Shop Now</Link>
           </button>
@@ -88,9 +87,7 @@ const Home = () => {
       </div>
       <div className="summer-sales">
         <h4>Summer Sales!</h4>
-        <p>
-          <span>50%</span> Off on All Products And Accessories
-        </p>
+        <p>50% Off on All Products And Accessories</p>
         <button type="button" className="sales-btn">
           <Link to="/shop">Explore Now</Link>
         </button>

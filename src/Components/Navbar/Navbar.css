@@ -43,17 +43,19 @@ header span {
 .navbar nav a:hover {
   color: rgb(250, 84, 23);
 }
-.cartstate-length {
-  width: 20px;
-  height: 13px;
+.cart-q .cartstate-length {
   background-color: red;
   border-radius: 50%;
-  padding: 1px 3px;
-  font-weight: bold;
-  font-size: 15px;
-}
-.cart-q span {
+  padding: 4px;
+  position: absolute;
+  font-size: 14px;
+  top: -12px;
+  right: -8px;
   color: #fff;
+}
+.cart-q {
+  position: relative;
+  font-size: 23px;
 }
 @media (max-width: 768px) {
   .menu-bar {
