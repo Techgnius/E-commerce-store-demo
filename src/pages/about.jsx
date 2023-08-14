@@ -8,10 +8,10 @@ const About = () => {
       <div className="about">
         <video src={videoBg} autoPlay loop muted />
         <div className="aboutUs">
-          <h1 className="aboutUs-header">
+          <h1 className="aboutUs-header" data-aos="fade-down">
             About <span>Us</span>
           </h1>
-          <p className="aboutUs-text">
+          <p className="aboutUs-text" data-aos="fade-left">
             We are a reliable and authentic brand with speedy delivery on
             products purchased from our platform. Our goal is to ensure that our
             customers are satisfied by providing professional and topnotch

@@ -5,7 +5,8 @@ import BlogImg1 from "../images/blog-pic1.jpg";
 import BlogImg2 from "../images/blog-pic2.jpg";
 import BlogImg3 from "../images/blog-pic3.jpg";
 import BlogImg4 from "../images/blog-pic4.jpg";
-import ScrollReveal from "scrollreveal";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Home = () => {
   const { state, dispatch } = useProductContext();
@@ -29,32 +30,36 @@ const Home = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   return (
     <div className="homeContainer">
       <div className="home">
         <div className="home-screen">
-          <h1>
+          <h1 data-aos="fade-down">
             Quality And <span>Affordable Products</span>
           </h1>
-          <h4>
+          <h4 data-aos="fade-right">
             Guaranteed to leave a big smile
             <br /> on your face
           </h4>
-          <button type="button" className="shop-btn">
+          <button type="button" className="shop-btn" data-aos="fade-up">
             <Link to="/shop">Shop Now</Link>
           </button>
         </div>
       </div>
       <div className="featured-prod">
         <div className="header">
-          <h1>
+          <h1 data-aos="flip-right">
             Featured <span>Products</span>
           </h1>
         </div>
         <div className="items">
           {featuredProducts.map((featured) => (
             <div className="featured-item" key={featured.id}>
-              <div className="item-card">
+              <div className="item-card" data-aos="zoom-in">
                 <img width={150} src={featured.image} alt="" />
                 <p>{featured.category}</p>
                 <p>Rating:{featured.rating.rate}</p>
@@ -86,21 +91,23 @@ const Home = () => {
         </div>
       </div>
       <div className="summer-sales">
-        <h4>Summer Sales!</h4>
-        <p>50% Off on All Products And Accessories</p>
-        <button type="button" className="sales-btn">
+        <h4 data-aos="zoom-in">Summer Sales!</h4>
+        <p data-aos="fade-right">50% Off on All Products And Accessories</p>
+        <button type="button" className="sales-btn" data-aos="fade-up">
           <Link to="/shop">Explore Now</Link>
         </button>
       </div>
       <div className="blog">
         <div className="header">
-          <h1>
+          <h1 data-aos="fade-left">
             Our Customers <span>Feedbacks</span>
           </h1>
-          <p>We love it when our customers give us feedbacks...</p>
+          <p data-aos="fade-right">
+            We love it when our customers give us feedbacks...
+          </p>
         </div>
         <div className="blog-card-container">
-          <div className="blog-card">
+          <div className="blog-card" data-aos="zoom-out">
             <img src={BlogImg2} width={250} height={230} alt="" />
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius,
@@ -111,7 +118,7 @@ const Home = () => {
               Read More
             </button>
           </div>
-          <div className="blog-card">
+          <div className="blog-card" data-aos="zoom-out">
             <img src={BlogImg1} width={250} height={230} alt="" />
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius,
@@ -122,7 +129,7 @@ const Home = () => {
               Read More
             </button>
           </div>
-          <div className="blog-card">
+          <div className="blog-card" data-aos="zoom-out">
             <img src={BlogImg3} width={250} height={230} alt="" />
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius,
@@ -133,7 +140,7 @@ const Home = () => {
               Read More
             </button>
           </div>
-          <div className="blog-card">
+          <div className="blog-card" data-aos="zoom-out">
             <img src={BlogImg4} width={250} height={230} alt="" />
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius,
@@ -149,8 +156,8 @@ const Home = () => {
       <div className="newsletter">
         <div className="newsletter-con">
           <div className="newsletter-text">
-            <h3>Sign Up for a newsletter</h3>
-            <p>
+            <h3 data-aos="fade-right">Sign Up for a newsletter</h3>
+            <p data-aos="fade-right">
               Get email updates on all our
               <span className="news-l-text"> special offers</span>!
             </p>
@@ -161,8 +168,9 @@ const Home = () => {
                 type="email"
                 className="signUp-email"
                 placeholder="@mail.com..."
+                data-aos="fade-left"
               />
-              <button type="button" className="news-l-btn">
+              <button type="button" className="news-l-btn" data-aos="fade-left">
                 Submit
               </button>
             </form>

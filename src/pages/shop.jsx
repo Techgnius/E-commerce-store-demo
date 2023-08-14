@@ -47,10 +47,10 @@ const Shop = () => {
     <>
       <div className="shop">
         <div className="shop-topscreen">
-          <h1 className="shop-ts-header">
+          <h1 className="shop-ts-header" data-aos="fade-down">
             <span>50%</span> Off On All Products
           </h1>
-          <p>Make Your Order Now We Will Deliver...</p>
+          <p data-aos="fade-up">Make Your Order Now We Will Deliver...</p>
         </div>
         <div className="shop-body">
           <div className="filter-section">
@@ -125,7 +125,7 @@ const Shop = () => {
               ) : (
                 products.length &&
                 transformProducts().map((product) => (
-                  <div className="product" key={product.id}>
+                  <div className="product" key={product.id} data-aos="zoom-in">
                     <div className="item-card">
                       <img width={200} src={product.image} alt={product.name} />
                       <p>{product.category}</p>

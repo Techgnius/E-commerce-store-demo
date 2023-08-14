@@ -11,7 +11,7 @@ const Login = (props) => {
   return (
     <>
       <div className="log-sign-scrn">
-        <div className="Login-signup">
+        <div className="Login-signup" data-aos="fade-down">
           <h1 className="log-sign-header">Log In</h1>
           <div className="main">
             <form onSubmit={() => handleSubmit()}>
