@@ -33,7 +33,11 @@ const Blog = () => {
               Checkout what's hot and what's not...on our daily blog posts. Get
               trending gists about fashion and lifestyle that would keep you up
               to date. We also encourage you to participate here by blogging
-              about what interests you.
+              about what interests you. You can explore your creative side by
+              starting up new fashion trends and life-style trends. Most
+              importantly, we would like to get your feedbacks about our
+              products and service. It would also help to get suggestions from
+              you about how to improve on our services.
             </p>
           </div>
           <div className="blog">

@@ -32,13 +32,14 @@ header span {
   color: rgb(250, 84, 23);
 }
 .navbar {
-  margin-right: 20px;
+  margin-right: 60px;
 }
 .navbar nav a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   padding-left: 17px;
   font-size: 20px;
+  padding: 20px;
 }
 .navbar nav a:hover {
   color: rgb(250, 84, 23);
