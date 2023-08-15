@@ -38,6 +38,7 @@ const Home = () => {
     <div className="homeContainer">
       <div className="home">
         <div className="home-screen">
+          <div className="overlay"></div>
           <h1 data-aos="fade-down">
             Quality And <span>Affordable Products</span>
           </h1>

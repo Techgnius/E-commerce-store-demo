@@ -10,6 +10,7 @@ const Blog = () => {
     <>
       <div className="blog-con">
         <div className="blog-topScreen">
+          <div className="overlay-b"></div>
           <h1 data-aos="zoom-in">
             Welcome To Our <span>Blog Page</span>
           </h1>
