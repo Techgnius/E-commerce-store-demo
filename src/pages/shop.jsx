@@ -102,7 +102,7 @@ const Shop = () => {
               <div className="search-input">
                 <form>
                   <span>
-                    <i class="bx bx-search"></i>
+                    <i className="bx bx-search"></i>
                     <input
                       type="text"
                       className="search-prod"

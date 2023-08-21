@@ -37,7 +37,7 @@ header span {
 .navbar nav a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  padding-left: 17px;
+  padding-left: 37px;
   font-size: 20px;
   padding: 20px;
 }
@@ -47,6 +47,7 @@ header span {
 .cart-q .cartstate-length {
   background-color: red;
   border-radius: 50%;
+  border: none;
   padding: 4px;
   position: absolute;
   font-size: 14px;
