@@ -36,20 +36,18 @@ const Home = () => {
 
   return (
     <div className="homeContainer">
-      <div className="home">
-        <div className="home-screen">
-          <div className="overlay"></div>
-          <h1 data-aos="fade-down">
-            Quality And <span>Affordable Products</span>
-          </h1>
-          <h4 data-aos="fade-right">
-            Guaranteed to leave a big smile
-            <br /> on your face
-          </h4>
-          <button type="button" className="shop-btn" data-aos="fade-up">
-            <Link to="/shop">Shop Now</Link>
-          </button>
-        </div>
+      <div className="home-screen">
+        <div className="overlay"></div>
+        <h1 data-aos="fade-down">
+          Quality And <span>Affordable Products</span>
+        </h1>
+        <h4 data-aos="fade-right">
+          Guaranteed to leave a big smile
+          <br /> on your face
+        </h4>
+        <button type="button" className="shop-btn" data-aos="fade-up">
+          <Link to="/shop">Shop Now</Link>
+        </button>
       </div>
       <div className="featured-prod">
         <div className="header">
@@ -59,34 +57,32 @@ const Home = () => {
         </div>
         <div className="items">
           {featuredProducts.map((featured) => (
-            <div className="featured-item" key={featured.id}>
-              <div className="item-card" data-aos="zoom-in">
-                <img width={150} src={featured.image} alt="" />
-                <p>{featured.category}</p>
-                <p>Rating:{featured.rating.rate}</p>
-                <p>${featured.price}</p>
-                {cartState.find((cart) => cart.id === featured.id) ? (
-                  <button
-                    className="item-btn"
-                    onClick={() =>
-                      dispatch({ type: "REMOVE_FROM_CART", payload: featured })
-                    }
-                    style={{ backgroundColor: "red", borderRadius: 7 }}
-                  >
-                    Remove From Cart
-                  </button>
-                ) : (
-                  <button
-                    className="item-btn"
-                    onClick={() =>
-                      dispatch({ type: "ADD_TO_CART", payload: featured })
-                    }
-                    style={{ borderRadius: 7 }}
-                  >
-                    Add to cart
-                  </button>
-                )}
-              </div>
+            <div className="item-card" key={featured.id} data-aos="zoom-in">
+              <img width={150} src={featured.image} alt="" />
+              <p>{featured.category}</p>
+              <p>Rating:{featured.rating.rate}</p>
+              <p>${featured.price}</p>
+              {cartState.find((cart) => cart.id === featured.id) ? (
+                <button
+                  className="item-btn"
+                  onClick={() =>
+                    dispatch({ type: "REMOVE_FROM_CART", payload: featured })
+                  }
+                  style={{ backgroundColor: "red", borderRadius: 7 }}
+                >
+                  Remove From Cart
+                </button>
+              ) : (
+                <button
+                  className="item-btn"
+                  onClick={() =>
+                    dispatch({ type: "ADD_TO_CART", payload: featured })
+                  }
+                  style={{ borderRadius: 7 }}
+                >
+                  Add to cart
+                </button>
+              )}
             </div>
           ))}
         </div>

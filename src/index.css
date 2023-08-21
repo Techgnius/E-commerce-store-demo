@@ -6,47 +6,15 @@
   font-family: "Noto Sans", sans-serif;
   font-family: "Source Sans 3", sans-serif;
 }
-
-.item {
-  display: grid;
-  grid-template-columns: repeat(4, 250px);
-  gap: 50px;
-  justify-content: center;
-}
-.item-btn {
+.homeContainer {
   width: 100%;
-  border: none;
-  padding: 6px;
-  background-color: rgb(51, 93, 218);
-  color: #fff;
-  cursor: pointer;
-  border-radius: 5px;
-}
-span {
-  color: rgb(51, 93, 218);
-}
-.wrapper {
-  display: grid;
-  grid-template-columns: 80% 20%;
-}
-.cart {
-  width: 100%;
-  /* height: 900px; */
-}
-.card {
-  display: flex;
-  padding: 12px 16px;
-}
-.card h2 {
-  /* width: 25px; */
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: 13px;
+  height: 100%;
+  overflow-x: hidden;
 }
 .home-screen {
   background: url(./images/home-img.jpg);
   width: 100%;
-  height: 500px;
+  height: 610px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -54,11 +22,13 @@ span {
 }
 .home-screen h1 {
   font-size: 35px;
-  margin-top: 90px;
+  letter-spacing: 1px;
+  margin-top: 190px;
   color: #fff;
 }
 .home-screen h4 {
   font-size: 25px;
+  letter-spacing: 1px;
   margin-top: 20px;
   color: #fff;
 }
@@ -67,7 +37,7 @@ span {
   top: 0;
   left: 0;
   width: 100%;
-  height: 84%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
 .shop-btn {
@@ -78,6 +48,9 @@ span {
   border: none;
   background-color: rgb(51, 93, 218);
   cursor: pointer;
+}
+.shop-btn:hover {
+  background-color: #7799d4;
 }
 .shop-btn a {
   color: #fff;
@@ -91,6 +64,7 @@ span {
 }
 .header h1 {
   text-align: center;
+  letter-spacing: 1px;
 }
 .items {
   display: flex;
@@ -100,8 +74,9 @@ span {
 }
 .item-card {
   width: 200px;
-  padding: 10px 12px;
+  padding: 20px;
   height: 320px;
+  border: 1px solid rgb(214, 210, 210);
   justify-content: space-around;
   transition: 0.3s ease;
 }
@@ -116,6 +91,7 @@ span {
 }
 .item-card p {
   font-size: 17px;
+  letter-spacing: 1px;
 }
 .summer-sales {
   background-image: url(./images/item7.jpg);
@@ -132,10 +108,12 @@ span {
 .summer-sales h4 {
   text-align: center;
   font-size: 26px;
+  letter-spacing: 1px;
 }
 .summer-sales p {
   text-align: center;
   font-size: 36px;
+  letter-spacing: 1px;
 }
 .sales-btn {
   padding: 12px 14px;
@@ -146,6 +124,9 @@ span {
   margin-bottom: 12px;
   border: none;
   background-color: rgb(51, 93, 218);
+}
+.sales-btn:hover {
+  background-color: #7799d4;
 }
 .sales-btn a {
   text-decoration: none;
@@ -159,6 +140,7 @@ span {
 }
 .header p {
   text-align: center;
+  letter-spacing: 1px;
   font-size: 18px;
 }
 .blog-card-container {
@@ -180,6 +162,9 @@ span {
   color: #fff;
   background-color: rgb(51, 93, 218);
 }
+.blog-btn:hover {
+  background-color: #7799d4;
+}
 .newsletter {
   width: 100%;
   height: 110px;
@@ -189,9 +174,11 @@ span {
 }
 .newsletter-text h3 {
   font-size: 23px;
+  letter-spacing: 1px;
 }
 .newsletter-text p {
   font-size: 17px;
+  letter-spacing: 1px;
 }
 .newsletter-con {
   display: flex;
@@ -210,6 +197,10 @@ span {
   color: #fff;
   background-color: rgb(51, 93, 218);
 }
+.news-l-btn:hover {
+  background-color: #7799d4;
+}
+
 .newsletter-form {
   justify-content: space-around;
 }
@@ -234,11 +225,14 @@ span {
 }
 .about-topscreen h1 {
   text-align: center;
+  letter-spacing: 1px;
   color: #fff;
 }
 .about-topscreen p {
   text-align: center;
   font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
   color: #fff;
 }
 .about-content {
@@ -248,6 +242,7 @@ span {
 }
 .about-content h1 {
   text-align: center;
+  letter-spacing: 1px;
 }
 .about-card {
   display: flex;
@@ -282,16 +277,19 @@ span {
   left: 0;
   width: 100%;
   height: 200px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .blog-topScreen h1 {
   text-align: center;
   justify-content: center;
+  letter-spacing: 1px;
   align-items: center;
   color: #fff;
 }
 .blog-topScreen p {
   text-align: center;
+  font-weight: bold;
+  letter-spacing: 1px;
   color: rgb(255, 255, 255);
 }
 .blog-trendy-card {
@@ -299,15 +297,29 @@ span {
   display: flex;
   padding: 40px;
 }
-.blog-trendy-card img {
+.trends img {
   width: 350px;
   margin-left: 60px;
   margin-right: 170px;
 }
-.blog-trendy-card p {
+.about-trends p {
   font-size: 20px;
   letter-spacing: 1px;
   padding-right: 70px;
+}
+.quick-ad {
+  background-color: rgb(51, 93, 218);
+  width: 610px;
+  color: #fff;
+  margin-top: 30px;
+}
+.quick-ad span {
+  color: rgb(250, 84, 23);
+}
+.quick-ad marquee {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 .blog {
   background-color: rgb(243, 238, 238);
@@ -325,10 +337,13 @@ span {
 .shop-topscreen h1 {
   font-size: 34px;
   text-align: center;
+  letter-spacing: 1px;
   color: #fff;
 }
-.shop-topscreen {
+.shop-topscreen p {
   font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
   text-align: center;
   color: #fff;
 }
@@ -510,12 +525,19 @@ span {
   width: 80%;
   height: 100%;
   padding: 17px 20px;
-  margin-top: 110px;
+  margin-top: 35px;
 }
 .cart-item {
+  width: 100%;
+  height: 105px;
+  border: 1px solid rgb(214, 210, 210);
   display: flex;
+  align-items: center;
   justify-content: space-around;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
+}
+.cart-item img {
+  width: 80px;
 }
 .cart-item p {
   font-size: 20px;
@@ -549,13 +571,41 @@ span {
   border-radius: 5px;
   border: none;
 }
-/* @media (max-width) {
-  .
+.item {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  gap: 50px;
+  justify-content: center;
+}
+.item-btn {
+  width: 100%;
+  border: none;
+  padding: 6px;
+  background-color: rgb(51, 93, 218);
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+span {
+  color: rgb(51, 93, 218);
+}
+/* @media (max-width:991px) {
+  
 } */
 @media (max-width: 768px) {
+  .home-screen {
+    height: 460px;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+  }
   .items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
     margin-left: 80px;
   }
   .summer-sales {
@@ -609,5 +659,75 @@ span {
   }
   .shop-link-btn {
     padding: 8px;
+  }
+}
+@media (max-width: 617px) {
+  .items {
+    margin-left: 180px;
+    grid-template-columns: 1fr;
+  }
+  .summer-sales {
+    margin-top: 960px;
+    height: 230px;
+  }
+  .blog-card-container {
+    margin-left: 180px;
+    grid-template-columns: 1fr;
+  }
+  .newsletter {
+    margin-top: 1060px;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .items {
+    margin-right: 200px;
+  }
+  .blog-card-container {
+    margin-left: 80px;
+  }
+  .newsletter {
+    height: 180px;
+  }
+  .signUp-email {
+    width: 100%;
+  }
+  .news-l-btn {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 365px) {
+  .home-screen {
+    height: 473px;
+  }
+  .home-screen h1 {
+    font-size: 21px;
+  }
+  .home-screen h4 {
+    font-size: 20px;
+  }
+  .items {
+    margin-left: 150px;
+  }
+  .summer-sales p {
+    font-size: 27px;
+  }
+  .sales-btn {
+    margin-left: 95px;
+  }
+  .blog-card-container {
+    margin-left: 35px;
+  }
+  .newsletter {
+    height: 180px;
+  }
+  .newsletter-text h3 {
+    font-size: 20px;
+  }
+  .newsletter-text p {
+    font-size: 15px;
+    margin-bottom: 10px;
   }
 }

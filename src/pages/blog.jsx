@@ -28,13 +28,26 @@ const Blog = () => {
             </h1>
           </div>
           <div className="blog-trendy-card" data-aos="fade-right">
-            <img src={TrendyImg} width={320} alt="" />
-            <p data-aos="fade-left">
-              Checkout what's hot and what's not...on our daily blog posts. Get
-              trending gists about fashion and lifestyle that would keep you up
-              to date. We also encourage you to participate here by blogging
-              about what interests you.
-            </p>
+            <div className="trends">
+              <img src={TrendyImg} width={320} alt="" />
+            </div>
+            <div className="about-trends">
+              <p data-aos="fade-left">
+                Checkout what's hot and what's not...on our daily blog posts.
+                Get trending gists about fashion and lifestyle that would keep
+                you up to date. We also encourage you to participate here by
+                blogging about what interests you.You can explore your creative
+                side by starting up new fashion trends and life-style trends.
+                Most importantly, we would like to get your feedbacks about our
+                products and service. It would also help to get suggestions from
+                you about how to improve on our services.
+              </p>
+              <div className="quick-ad">
+                <marquee>
+                  Get <span>50%</span> discount on all our products this Summer!
+                </marquee>
+              </div>
+            </div>
           </div>
           <div className="blog">
             <div className="header">

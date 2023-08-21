@@ -5,7 +5,6 @@ const Cart = () => {
   const [total, setTotal] = useState(0);
   const { state, dispatch } = useProductContext();
   const { products, cartState } = state;
-  console.log(cartState);
 
   //Calculate the total price of items in the cart
   useEffect(() => {

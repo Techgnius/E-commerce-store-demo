@@ -32,12 +32,12 @@ header span {
   color: rgb(250, 84, 23);
 }
 .navbar {
-  margin-right: 20px;
+  margin-right: 60px;
 }
 .navbar nav a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  padding-left: 17px;
+  padding-left: 37px;
   font-size: 20px;
 }
 .navbar nav a:hover {
@@ -46,6 +46,7 @@ header span {
 .cart-q .cartstate-length {
   background-color: red;
   border-radius: 50%;
+  border: none;
   padding: 4px;
   position: absolute;
   font-size: 14px;
