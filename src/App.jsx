@@ -10,6 +10,8 @@ import Shop from "./pages/shop";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
 import Footer from "./Components/Footer/Footer";
+import { ScrollToTop } from "./Components/ScrollToTop";
+import GoToTopButton from "./Components/GoToTopButton";
 
 function App() {
   const [currentForm, setCurrentForm] = useState("Login");
@@ -20,6 +22,7 @@ function App() {
   return (
     <div className="container">
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -38,6 +41,7 @@ function App() {
           />
           <Route path="/Cart" element={<Cart />} />
         </Routes>
+        <GoToTopButton />
         <Footer />
       </Router>
     </div>
