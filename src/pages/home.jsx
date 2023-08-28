@@ -1,17 +1,20 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useProductContext } from "../context/context";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import BlogImg1 from "../images/blog-pic1.jpg";
 import BlogImg2 from "../images/blog-pic2.jpg";
 import BlogImg3 from "../images/blog-pic3.jpg";
 import BlogImg4 from "../images/blog-pic4.jpg";
+import SalesImg from "../images/item1.jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
 const Home = () => {
   const { state, dispatch } = useProductContext();
   let { products, isloading, error, cartState } = state;
-  const featuredProducts = products.slice(0, 4);
+  const featuredProducts = products.slice(0, 6);
 
   const fetchData = async () => {
     dispatch({ type: "START_FETCH" });
@@ -33,21 +36,102 @@ const Home = () => {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 4,
+      slidesToSlide: 3, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 2, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
 
   return (
     <div className="homeContainer">
       <div className="home-screen">
-        <div className="overlay"></div>
         <h1 data-aos="fade-down">
-          Quality And <span>Affordable Products</span>
+          Get Quality,Trendy And
+          <br /> Affordable Products
         </h1>
         <h4 data-aos="fade-right">
           Guaranteed to leave a big smile
           <br /> on your face
         </h4>
+        <p data-aos="fade-right">Save more today with TechGnius Store.</p>
         <button type="button" className="shop-btn" data-aos="fade-up">
           <Link to="/shop">Shop Now</Link>
         </button>
+      </div>
+      <div className="quick-ad">
+        <marquee>
+          Get <span>50%</span> discount on all our products this Summer! Offers
+          are valid while stock lasts. Don't miss out on this opportunity!...
+        </marquee>
+      </div>
+      <div className="values-con" data-aos="fade-right">
+        <div className="value-card">
+          <i class="bx bx-dollar"></i>
+          <h4>
+            True Moneyback
+            <br /> Guarantee
+          </h4>
+          <p>
+            Ordered a wrong product? Get
+            <br /> your money back, no problem.
+          </p>
+        </div>
+        <div className="value-card">
+          <i class="bx bxs-truck"></i>
+          <h4>
+            1-Day Free Fast
+            <br /> Delivery
+          </h4>
+          <p>
+            Get free next day delivery
+            <br /> on orders over $100 within Lagos.
+          </p>
+        </div>
+        <div className="value-card">
+          <i class="bx bxs-bank"></i>
+          <h4>
+            Exceptional Value
+            <br /> Savings
+          </h4>
+          <p>
+            Aggressive pricing for compatible
+            <br /> official products.
+          </p>
+        </div>
+        <div className="value-card">
+          <i class="bx bx-store"></i>
+          <h4>
+            Guaranteed Product
+            <br /> Quality
+          </h4>
+          <p>
+            We work only with official suppliers
+            <br /> from all major manufacturers.
+          </p>
+        </div>
+        <div className="value-card">
+          <i class="bx bxs-phone-call"></i>
+          <h4>
+            Friendly 24/7
+            <br /> Customer Support
+          </h4>
+          <p>
+            You can easily contact us
+            <br /> by phone call or email.
+          </p>
+        </div>
       </div>
       <div className="featured-prod">
         <div className="header">
@@ -55,44 +139,65 @@ const Home = () => {
             Featured <span>Products</span>
           </h1>
         </div>
-        <div className="items">
-          {featuredProducts.map((featured) => (
-            <div className="item-card" key={featured.id} data-aos="zoom-in">
-              <img width={150} src={featured.image} alt="" />
-              <p>{featured.category}</p>
-              <p>Rating:{featured.rating.rate}</p>
-              <p>${featured.price}</p>
-              {cartState.find((cart) => cart.id === featured.id) ? (
-                <button
-                  className="item-btn"
-                  onClick={() =>
-                    dispatch({ type: "REMOVE_FROM_CART", payload: featured })
-                  }
-                  style={{ backgroundColor: "red", borderRadius: 7 }}
-                >
-                  Remove From Cart
-                </button>
-              ) : (
-                <button
-                  className="item-btn"
-                  onClick={() =>
-                    dispatch({ type: "ADD_TO_CART", payload: featured })
-                  }
-                  style={{ borderRadius: 7 }}
-                >
-                  Add to cart
-                </button>
-              )}
-            </div>
-          ))}
+        <div className="featured-p">
+          <Carousel responsive={responsive}>
+            {featuredProducts.map((featured) => (
+              <div
+                className="item-card-con"
+                data-aos="zoom-in"
+                key={featured.id}
+              >
+                <div className="item-card">
+                  <img width={150} src={featured.image} alt="" />
+                  <p>{featured.category}</p>
+                  <p>Rating:{featured.rating.rate}</p>
+                  <p>${featured.price}</p>
+                  {cartState.find((cart) => cart.id === featured.id) ? (
+                    <button
+                      className="item-btn"
+                      onClick={() =>
+                        dispatch({
+                          type: "REMOVE_FROM_CART",
+                          payload: featured,
+                        })
+                      }
+                      style={{ backgroundColor: "red", borderRadius: 7 }}
+                    >
+                      REMOVE FROM CART
+                    </button>
+                  ) : (
+                    <button
+                      className="item-btn"
+                      onClick={() =>
+                        dispatch({ type: "ADD_TO_CART", payload: featured })
+                      }
+                      style={{ borderRadius: 7 }}
+                    >
+                      ADD TO CART
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))}
+          </Carousel>
         </div>
       </div>
       <div className="summer-sales">
-        <h4 data-aos="zoom-in">Summer Sales!</h4>
-        <p data-aos="fade-right">50% Off on All Products And Accessories</p>
-        <button type="button" className="sales-btn" data-aos="fade-up">
-          <Link to="/shop">Explore Now</Link>
-        </button>
+        <div className="sales-wrapper">
+          <div className="sales-text">
+            <h4 data-aos="zoom-in">Summer Sales!</h4>
+            <p data-aos="fade-right">
+              50% Off on All Products And Accessories.
+              <br /> Don't miss out on this oppurtunity.
+            </p>
+            <button type="button" className="sales-btn" data-aos="fade-up">
+              <Link to="/shop">Explore Now</Link>
+            </button>
+          </div>
+          <div className="sales-img">
+            <img src={SalesImg} width={300} alt="sales-img" />
+          </div>
+        </div>
       </div>
       <div className="blog">
         <div className="header">

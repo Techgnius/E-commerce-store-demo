@@ -19,10 +19,6 @@ const Shop = () => {
       );
     }
 
-    let handleToast = () => {
-      toastRef.current.displayToast();
-    };
-
     return sortedProduts;
   };
 
@@ -142,7 +138,7 @@ const Shop = () => {
                           }
                           style={{ backgroundColor: "red", borderRadius: 7 }}
                         >
-                          Remove From Cart
+                          REMOVE FROM CART
                         </button>
                       ) : (
                         <button
@@ -155,7 +151,7 @@ const Shop = () => {
                           }
                           style={{ borderRadius: 7 }}
                         >
-                          Add to cart
+                          Add TO CART
                         </button>
                       )}
                     </div>

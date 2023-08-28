@@ -78,4 +78,11 @@
     column-gap: 60px;
     row-gap: 30px;
   }
+  @media (max-width: 365px) {
+    .footer-card-con {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin-left: 60px;
+    }
+  }
 }

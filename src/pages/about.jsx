@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import videoBg from "../videos/backgroundVideo.mp4";
+import AboutImage from "../images/about-img.jpg";
 
 const About = () => {
   return (
@@ -15,14 +15,13 @@ const About = () => {
             <br /> and services for you.
           </p>
         </div>
-
         <div className="about-content">
           <h1 data-aos="fade-down">
             About <span>Us</span>
           </h1>
           <div className="about-card">
-            <div className="about-vid">
-              <video src={videoBg} autoPlay loop muted data-aos="fade-right" />
+            <div className="about-img" data-aos="fade-right">
+              <img src={AboutImage} alt="about-img" />
             </div>
             <div className="about-txt">
               <p data-aos="fade-left">
