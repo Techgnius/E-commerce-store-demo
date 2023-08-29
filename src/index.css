@@ -259,7 +259,7 @@
 .about-topscreen {
   width: 100%;
   height: 200px;
-  background-image: url(./images/placeholder.jpg);
+  background-image: url(./images/aboutScreen.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -777,23 +777,36 @@ span {
 }
 @media (max-width: 365px) {
   .home-screen {
-    height: 520px;
+    width: 100%;
+    height: 370px;
+    margin-bottom: 0px;
     padding: 10;
   }
   .home-screen h1 {
-    font-size: 30px;
+    font-size: 25px;
+    margin-top: 77px;
   }
   .home-screen h4 {
-    font-size: 20px;
+    font-size: 17px;
   }
-  .home-screen {
+  .home-screen p {
+    margin-top: 14px;
+    font-size: 13px;
+  }
+  .shop-btn {
+    margin-top: 15px;
+    padding: 8px;
+  }
+  .quick-ad {
     width: 100%;
+    padding: 5px;
   }
   .values-con {
     display: grid;
-    height: 800px;
+    width: 200px;
+    height: 940px;
     grid-template-columns: 1fr;
-    margin-left: 70px;
+    margin-left: 90px;
   }
   .featured-prod {
     width: 100%;
@@ -857,7 +870,8 @@ span {
     flex-direction: column;
   }
   .about-img img {
-    width: 280px;
+    width: 330px;
+    margin-left: -20px;
   }
   .about-card p {
     font-size: 15px;
@@ -915,11 +929,14 @@ span {
     flex-direction: column;
   }
   .filter-section {
-    width: 50%;
-    height: 300px;
+    width: 70%;
+    height: 500px;
   }
   .filter-header {
-    font-size: 15px;
+    font-size: 16px;
+  }
+  .filter-section label {
+    font-size: 14px;
   }
   .product {
     width: 180px;
@@ -944,7 +961,7 @@ span {
     padding: 5px;
   }
   .search-prod::placeholder {
-    font-size: 15px;
+    font-size: 11px;
   }
   .Login-signup {
     width: 300px;

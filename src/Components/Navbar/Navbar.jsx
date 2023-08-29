@@ -10,6 +10,10 @@ const Navbar = () => {
   const showNavRef = () => {
     navRef.current.classList.toggle("responsive-nav");
   };
+  const removeNavRef = () => {
+    navRef.current.classList.remove("responsive-nav");
+  };
+
   return (
     <header>
       <div className="logo">
@@ -20,7 +24,7 @@ const Navbar = () => {
         </label>
       </div>
       <div className="navbar">
-        <nav ref={navRef}>
+        <nav ref={navRef} onClick={removeNavRef}>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/blog">Blog</Link>

@@ -78,7 +78,7 @@ const Home = () => {
       </div>
       <div className="values-con" data-aos="fade-right">
         <div className="value-card">
-          <i class="bx bx-dollar"></i>
+          <i className="bx bx-dollar"></i>
           <h4>
             True Moneyback
             <br /> Guarantee
@@ -89,7 +89,7 @@ const Home = () => {
           </p>
         </div>
         <div className="value-card">
-          <i class="bx bxs-truck"></i>
+          <i className="bx bxs-truck"></i>
           <h4>
             1-Day Free Fast
             <br /> Delivery
@@ -100,7 +100,7 @@ const Home = () => {
           </p>
         </div>
         <div className="value-card">
-          <i class="bx bxs-bank"></i>
+          <i className="bx bxs-bank"></i>
           <h4>
             Exceptional Value
             <br /> Savings
@@ -111,7 +111,7 @@ const Home = () => {
           </p>
         </div>
         <div className="value-card">
-          <i class="bx bx-store"></i>
+          <i className="bx bx-store"></i>
           <h4>
             Guaranteed Product
             <br /> Quality
@@ -122,7 +122,7 @@ const Home = () => {
           </p>
         </div>
         <div className="value-card">
-          <i class="bx bxs-phone-call"></i>
+          <i className="bx bxs-phone-call"></i>
           <h4>
             Friendly 24/7
             <br /> Customer Support

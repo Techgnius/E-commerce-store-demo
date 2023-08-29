@@ -1,5 +1,4 @@
 import React from "react";
-import TrendyImg from "../images/blog-header-img.jpg";
 import BlogImg1 from "../images/blog-pic1.jpg";
 import BlogImg2 from "../images/blog-pic2.jpg";
 import BlogImg3 from "../images/blog-pic3.jpg";
