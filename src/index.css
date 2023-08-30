@@ -71,7 +71,6 @@
 .values-con {
   display: flex;
   width: 100%;
-  height: 300px;
   padding: 30px;
   align-items: center;
   justify-content: space-between;
@@ -676,13 +675,6 @@ span {
   color: rgb(51, 93, 218);
 }
 @media (max-width: 768px) {
-  html,
-  body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-  }
   .home-screen {
     height: 500px;
     text-align: center;
@@ -695,6 +687,7 @@ span {
   .values-con {
     align-items: center;
     justify-content: center;
+    padding-bottom: 200px;
   }
   .value-card {
     margin-left: 10px;
@@ -873,7 +866,7 @@ span {
     margin-top: 10px;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 440px) {
   .home-screen {
     width: 100%;
     height: 370px;
@@ -902,9 +895,8 @@ span {
   .values-con {
     display: grid;
     width: 250px;
-    height: 1400px;
     grid-template-columns: 1fr;
-    row-gap: 5px;
+    row-gap: 230px;
     margin-left: 105px;
   }
   .value-card i {
@@ -921,7 +913,7 @@ span {
     height: 200px;
   }
   .featured-p {
-    margin-left: 50px;
+    margin-left: 90px;
   }
   .item-card {
     width: 180px;
@@ -983,10 +975,11 @@ span {
   .about-card {
     display: flex;
     flex-direction: column;
+    height: 450px;
   }
   .about-img img {
-    width: 330px;
-    margin-left: -20px;
+    width: 350px;
+    height: 250px;
   }
   .about-card p {
     font-size: 15px;
@@ -1135,10 +1128,9 @@ span {
     margin-left: 25px;
   }
 }
-@media (max-width: 380px) {
+@media (max-width: 385px) {
   .home-screen {
     width: 100%;
-    height: 370px;
     margin-bottom: 0px;
     padding: 10;
   }
@@ -1164,7 +1156,7 @@ span {
   .values-con {
     display: grid;
     width: 200px;
-    height: 1500px;
+    /* height: 1500px; */
     grid-template-columns: 1fr;
     margin-left: 90px;
     margin-bottom: 50px;

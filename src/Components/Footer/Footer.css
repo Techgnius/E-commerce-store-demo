@@ -86,7 +86,7 @@
       margin-left: 60px;
     }
   }
-  @media (max-width: 365px) {
+  @media (max-width: 385px) {
     .footer-card-con {
       display: grid;
       grid-template-columns: 1fr;
