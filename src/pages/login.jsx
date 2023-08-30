@@ -11,7 +11,6 @@ const Login = (props) => {
   return (
     <>
       <div className="log-sign-scrn">
-        <div className="overlay"></div>
         <div className="Login-signup" data-aos="fade-down">
           <h1 className="log-sign-header">Log In</h1>
           <div className="main">

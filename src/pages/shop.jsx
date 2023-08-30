@@ -46,7 +46,7 @@ const Shop = () => {
           <h1 className="shop-ts-header" data-aos="fade-down">
             <span>50%</span> Off On All Products
           </h1>
-          <p data-aos="fade-up">Make Your Order Now We Will Deliver...</p>
+          <p data-aos="fade-up">Make Your Order Now, We Will Deliver...</p>
         </div>
         <div className="shop-body">
           <div className="filter-section">
@@ -98,7 +98,6 @@ const Shop = () => {
               <div className="search-input">
                 <form>
                   <span>
-                    <i className="bx bx-search"></i>
                     <input
                       type="text"
                       className="search-prod"
