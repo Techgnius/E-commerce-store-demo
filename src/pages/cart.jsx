@@ -10,7 +10,7 @@ const Cart = () => {
   useEffect(() => {
     setTotal(
       cartState.reduce(
-        (acc, curr) => acc + Number(curr.price) * curr.quantity,
+        (acc, curr) => Math.ceil(acc + Number(curr.price) * curr.quantity),
         0
       )
     );

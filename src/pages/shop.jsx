@@ -105,7 +105,7 @@ const Shop = () => {
                       onChange={(event) =>
                         filterdispatch({
                           type: "FILTER_BY_SEARCH",
-                          payload: event.target.value,
+                          payload: event.target.value.toLowerCase(),
                         })
                       }
                     />
